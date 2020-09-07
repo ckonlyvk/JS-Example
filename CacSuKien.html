@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Một số sự kiện phổ biến trên nút</title>
+</head>
+
+<body>
+    <script>
+        function HelloWorld() {
+            document.write("Hello World!!!" + "<br>") //Xuất ra nội dung html ra màn hình
+        }
+
+        function ChangeBorderColor(color) {
+            var txt = document.getElementById("text_demo")
+            if (color == 1) {
+                txt.style.border = "solid 4px red"; //Đổi kiểu đường viền của element
+            } else {
+                txt.style.border = "solid 1px pink";
+            }
+        }
+
+        function DemoOnChange() {
+            var spanElement = document.getElementById("changed");
+            var drop_down = document.getElementById("drop_down");
+            //innerHTML là thuộc tính chứa nội dung bên trong thẻ
+            //value là thuộc tính chứa giá trị của thành phần 
+            spanElement.innerHTML = "Giá trị được chọn là: " + drop_down.value;
+
+        }
+
+        function ChangeButtonColor(color) {
+            var button = document.getElementById("button");
+            if (color == 1) {
+                button.style.backgroundColor = "yellow";
+            } else if (color == 2) {
+                button.style.backgroundColor = "blue";
+            } else if (color == 3) {
+                button.style.backgroundColor = "red";
+            } else {
+                button.style.backgroundColor = "pink";
+            }
+        }
+    </script>
+    <input type="button" value="DemoOnClick" onclick="HelloWorld()"><br>
+    <input type="text" id="text_demo" onFocus="ChangeBorderColor(1)" onBlur="ChangeBorderColor(2)" placeholder="DemoOnFocus/onBlur">
+    <br>
+    <select id="drop_down" onChange="DemoOnChange()">
+        <option>VietNam</option>
+        <option>Germany</option>
+        <option>US</option>
+        <option>Russia</option>
+    </select>
+    <p id="changed"></p>
+    <input type="button" id="button" value="DemoOnButton" onmouseover="ChangeButtonColor(1)" onmouseout="ChangeButtonColor(2)" onmouseup="ChangeButtonColor(4)" onmousedown="ChangeButtonColor(3)">
+</body>
+
+</html>

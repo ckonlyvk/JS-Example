@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        function ChangeImg() {
+            var img = document.getElementById("image");
+            if (img.src.match("dog1")) {
+                img.src = "img/dog2.jpg";
+            } else {
+                img.src = "img/dog1.jpg";
+            }
+        }
+    </script>
+
+    <h2>Ví dụ về thay đổi ảnh</h2>
+    <img id="image" src="img/dog2.jpg" onclick="ChangeImg()">
+</body>
+
+</html>

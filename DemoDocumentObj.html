@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Demo Truy xuất các phần tử</title>
+</head>
+
+<body>
+    <script>
+        function ChangeHeadingColor() {
+            var headings = document.getElementsByClassName("heading"); //Tìm tất cả thẻ thông qua class name 
+            for (i = 0; i < headings.length; i++) {
+                headings[i].style.color = "blue";
+            }
+        }
+
+        function ChangeParagraphColor() {
+            var paragraphs = document.getElementsByTagName("p"); //Tìm tất cả thẻ thông qua tên thẻ
+            for (i = 0; i < paragraphs.length; i++) {
+                paragraphs[i].style.color = "red";
+            }
+        }
+
+        function ChangeSpecialTextColor() {
+            var paragraph = document.getElementById("special"); //Tìm thẻ thông qua id 
+            paragraph.style.color = "pink";
+            paragraph.innerHTML = "This is a special paragraph";
+        }
+    </script>
+    <h1 class="heading">This is a heading 1</h1>
+    <h2 class="heading">This is a heading 2</h2>
+    <h3 class="heading">This is a heading 3</h3>
+    <p id="special">This is a paragraph</p>
+    <P>This is a paragraph</P>
+    <p>This is a paragraph</p>
+    <input type="button" value="ChangeHeadingColor" onclick="ChangeHeadingColor()"><br>
+    <input type="button" value="ChangeParagraphColor" onclick="ChangeParagraphColor()"><br>
+    <input type="button" value="ChangeSpecialTextColor" onclick="ChangeSpecialTextColor()">
+</body>
+
+</html>
